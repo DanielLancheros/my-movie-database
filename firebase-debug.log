@@ -1,0 +1,219 @@
+[debug] [2023-07-12T19:43:30.444Z] ----------------------------------------------------------------------
+[debug] [2023-07-12T19:43:30.445Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-07-12T19:43:30.445Z] CLI Version:   12.4.0
+[debug] [2023-07-12T19:43:30.445Z] Platform:      darwin
+[debug] [2023-07-12T19:43:30.445Z] Node Version:  v18.16.0
+[debug] [2023-07-12T19:43:30.446Z] Time:          Wed Jul 12 2023 15:43:30 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-07-12T19:43:30.446Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-12T19:43:30.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-12T19:43:30.477Z] > authorizing via signed-in user (danielcoding327@gmail.com)
+[debug] [2023-07-12T19:43:30.477Z] [iam] checking project my-movie-db-dl for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-12T19:43:30.477Z] > refreshing access token with scopes: []
+[debug] [2023-07-12T19:43:30.478Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-07-12T19:43:30.478Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-12T19:43:30.709Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-07-12T19:43:30.709Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-07-12T19:43:30.724Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions [none]
+[debug] [2023-07-12T19:43:30.724Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:43:30.724Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-12T19:43:31.134Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions 200
+[debug] [2023-07-12T19:43:31.135Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-12T19:43:31.136Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl [none]
+[debug] [2023-07-12T19:43:31.473Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl 200
+[debug] [2023-07-12T19:43:31.473Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl {"projectId":"my-movie-db-dl","projectNumber":"500012498491","displayName":"my-movie-db-dl","name":"projects/my-movie-db-dl","resources":{"hostingSite":"my-movie-db-dl"},"state":"ACTIVE","etag":"1_c7860c4e-1f37-42aa-a40b-e8af92f3c1c7"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • use of fallback /[genre]
+[info] 
+[debug] [2023-07-12T19:43:56.957Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "my-movie-db-dl",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrmymoviedbdl",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "/favicon.ico",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "content-type",
+              "value": "image/x-icon"
+            },
+            {
+              "key": "x-next-cache-tags",
+              "value": "/favicon.ico/route"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "public": ".firebase/my-movie-db-dl/hosting",
+      "webFramework": "next_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase/my-movie-db-dl/functions",
+      "codebase": "firebase-frameworks-my-movie-db-dl"
+    }
+  ]
+}
+[debug] [2023-07-12T19:43:56.957Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-12T19:43:56.957Z] > authorizing via signed-in user (danielcoding327@gmail.com)
+[debug] [2023-07-12T19:43:56.957Z] [iam] checking project my-movie-db-dl for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-07-12T19:43:56.958Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions [none]
+[debug] [2023-07-12T19:43:56.958Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:43:56.958Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-07-12T19:43:57.252Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions 200
+[debug] [2023-07-12T19:43:57.253Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/my-movie-db-dl:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'my-movie-db-dl'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-07-12T19:43:57.257Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl [none]
+[debug] [2023-07-12T19:43:57.642Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl 200
+[debug] [2023-07-12T19:43:57.642Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl {"projectId":"my-movie-db-dl","projectNumber":"500012498491","displayName":"my-movie-db-dl","name":"projects/my-movie-db-dl","resources":{"hostingSite":"my-movie-db-dl"},"state":"ACTIVE","etag":"1_c7860c4e-1f37-42aa-a40b-e8af92f3c1c7"}
+[info] i  functions: preparing codebase firebase-frameworks-my-movie-db-dl for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-07-12T19:43:57.644Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-07-12T19:43:57.644Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:43:57.645Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-07-12T19:43:57.645Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:43:57.646Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudbuild.googleapis.com [none]
+[debug] [2023-07-12T19:43:57.646Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudbuild.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:43:57.647Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/artifactregistry.googleapis.com [none]
+[debug] [2023-07-12T19:43:57.647Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/artifactregistry.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:43:58.048Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/runtimeconfig.googleapis.com 200
+[debug] [2023-07-12T19:43:58.048Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-07-12T19:43:58.050Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudfunctions.googleapis.com 200
+[debug] [2023-07-12T19:43:58.050Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-07-12T19:43:58.171Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/artifactregistry.googleapis.com 200
+[debug] [2023-07-12T19:43:58.172Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-07-12T19:43:58.174Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudbuild.googleapis.com 200
+[debug] [2023-07-12T19:43:58.174Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-07-12T19:43:58.175Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl/adminSdkConfig [none]
+[debug] [2023-07-12T19:43:58.485Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl/adminSdkConfig 200
+[debug] [2023-07-12T19:43:58.485Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl/adminSdkConfig {"projectId":"my-movie-db-dl","storageBucket":"my-movie-db-dl.appspot.com"}
+[debug] [2023-07-12T19:43:58.486Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/my-movie-db-dl/configs [none]
+[debug] [2023-07-12T19:43:58.719Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/my-movie-db-dl/configs 200
+[debug] [2023-07-12T19:43:58.720Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/my-movie-db-dl/configs {}
+[debug] [2023-07-12T19:43:58.723Z] Validating nodejs source
+[debug] [2023-07-12T19:43:59.666Z] > [functions] package.json contents: {
+  "name": "my-movie-database",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "10.4.14",
+    "next": "13.4.9",
+    "postcss": "8.4.25",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "firebase-frameworks": "^0.10.1",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2023-07-12T19:43:59.666Z] Building nodejs source
+[debug] [2023-07-12T19:43:59.668Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-07-12T19:43:59.676Z] Found firebase-functions binary at '/Users/daniellancheros/c11/next/my-movie-database/.firebase/my-movie-db-dl/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-07-12T19:43:59.781Z] Serving at port 8773
+
+[debug] [2023-07-12T19:43:59.873Z] Got response from /__/functions.yaml {"endpoints":{"ssrmymoviedbdl":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrmymoviedbdl"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-07-12T19:43:59.877Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase/my-movie-db-dl/functions directory for uploading... 
+[info] i  functions: packaged /Users/daniellancheros/c11/next/my-movie-database/.firebase/my-movie-db-dl/functions (52.86 MB) for uploading 
+[debug] [2023-07-12T19:44:01.152Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/my-movie-db-dl/locations/-/functions [none]
+[debug] [2023-07-12T19:44:01.839Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/my-movie-db-dl/locations/-/functions 200
+[debug] [2023-07-12T19:44:01.840Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/my-movie-db-dl/locations/-/functions {}
+[debug] [2023-07-12T19:44:01.842Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/my-movie-db-dl/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-07-12T19:44:02.357Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/my-movie-db-dl/locations/-/functions 200
+[debug] [2023-07-12T19:44:02.358Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/my-movie-db-dl/locations/-/functions {"functions":[{"name":"projects/my-movie-db-dl/locations/us-central1/functions/ssrmymoviedbdl","buildConfig":{"build":"projects/500012498491/locations/us-central1/builds/745db7d4-caf8-4d34-bab0-7f7b4b2bcd41","runtime":"nodejs18","entryPoint":"ssrmymoviedbdl","source":{"storageSource":{"bucket":"gcf-v2-sources-500012498491-us-central1","object":"ssrmymoviedbdl/function-source.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-500012498491-us-central1","object":"ssrmymoviedbdl/function-source.zip","generation":"1689187536340089"}}},"serviceConfig":{"service":"projects/my-movie-db-dl/locations/us-central1/services/ssrmymoviedbdl","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","FIREBASE_CONFIG":"{\"projectId\":\"my-movie-db-dl\",\"storageBucket\":\"my-movie-db-dl.appspot.com\"}","GCLOUD_PROJECT":"my-movie-db-dl","EVENTARC_CLOUD_EVENT_SOURCE":"projects/my-movie-db-dl/locations/us-central1/services/ssrmymoviedbdl"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrmymoviedbdl-zckq3xshjq-uc.a.run.app","serviceAccountEmail":"500012498491-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrmymoviedbdl-00001-nov","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2023-07-12T18:49:24.610543461Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-my-movie-db-dl","firebase-functions-hash":"7cfbfe2c563b2c0b1234d483ab1d50feea6c5e3e"},"environment":"GEN_2","url":"https://us-central1-my-movie-db-dl.cloudfunctions.net/ssrmymoviedbdl"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-07-12T19:44:02.373Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/run.googleapis.com [none]
+[debug] [2023-07-12T19:44:02.373Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/run.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:44:02.375Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/eventarc.googleapis.com [none]
+[debug] [2023-07-12T19:44:02.375Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/eventarc.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:44:02.377Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/pubsub.googleapis.com [none]
+[debug] [2023-07-12T19:44:02.377Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/pubsub.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:44:02.378Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/storage.googleapis.com [none]
+[debug] [2023-07-12T19:44:02.379Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/storage.googleapis.com x-goog-quota-user=projects/my-movie-db-dl
+[debug] [2023-07-12T19:44:02.742Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/storage.googleapis.com 200
+[debug] [2023-07-12T19:44:02.742Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-07-12T19:44:02.743Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/run.googleapis.com 200
+[debug] [2023-07-12T19:44:02.743Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[debug] [2023-07-12T19:44:02.744Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/eventarc.googleapis.com 200
+[debug] [2023-07-12T19:44:02.745Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-07-12T19:44:02.885Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/pubsub.googleapis.com 200
+[debug] [2023-07-12T19:44:02.885Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/my-movie-db-dl/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-07-12T19:44:02.887Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/500012498491/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-07-12T19:44:02.891Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/500012498491/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-07-12T19:44:03.411Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/500012498491/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-07-12T19:44:03.411Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/500012498491/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-500012498491@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"109106932071417836880"}}
+[debug] [2023-07-12T19:44:03.685Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/500012498491/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-07-12T19:44:03.686Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/500012498491/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-500012498491@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"102634377422971749666"}}
+[debug] [2023-07-12T19:44:03.690Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl [none]
+[debug] [2023-07-12T19:44:03.933Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl 200
+[debug] [2023-07-12T19:44:03.933Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/my-movie-db-dl {"projectId":"my-movie-db-dl","projectNumber":"500012498491","displayName":"my-movie-db-dl","name":"projects/my-movie-db-dl","resources":{"hostingSite":"my-movie-db-dl"},"state":"ACTIVE","etag":"1_c7860c4e-1f37-42aa-a40b-e8af92f3c1c7"}
+[debug] [2023-07-12T19:44:03.940Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-movie-db-dl/versions [none]
+[debug] [2023-07-12T19:44:03.940Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-movie-db-dl/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-07-12T19:44:04.694Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-movie-db-dl/versions 200
+[debug] [2023-07-12T19:44:04.694Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/my-movie-db-dl/versions {"name":"projects/500012498491/sites/my-movie-db-dl/versions/43ad54153224d78d","status":"CREATED","config":{},"labels":{"firebase-web-framework":"next_ssr","deployment-tool":"cli-firebase"}}
+[debug] [2023-07-12T19:44:04.697Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/my-movie-db-dl/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-07-12T19:44:05.094Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/my-movie-db-dl/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-07-12T19:44:05.095Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/my-movie-db-dl/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-500012498491-us-central1/54926445-e2ec-4a51-a442-dd561aaf6255.zip?GoogleAccessId=service-500012498491@gcf-admin-robot.iam.gserviceaccount.com&Expires=1689192845&Signature=PymR6UAXJU0SGikVONtxaifB9X1D%2FeyHIBBTKjZXl8fwrJ1mqEMXRuqV9faBYUuHlombvGVTBYALCknXdEiPMPcJVFI%2FZ9z3yUWG8gzxx8VkVJPSftExvd4aX%2Bna1%2F59vIziAb8CXhbH77OCKGGtqV6GmtuWD3qU%2FZ35bhwpZm22n9vOkB6Kv3BRo%2BcdUXSxjA9Ucv0LQhKAEFsSP9BHvFPgmfDerdn4x2jyV5ZM0ZhDLzdHLX3S%2BVfaZamNPYClyjrn4K6QadHduEMLP4QD0TFCBh%2B88awtS5wGx7UAaPFO%2FqKKjgidV5IYM5IwshbieAEoe%2FjFRctZ41vQxbBU8A%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-500012498491-us-central1","object":"54926445-e2ec-4a51-a442-dd561aaf6255.zip"}}
+[debug] [2023-07-12T19:44:05.096Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-500012498491-us-central1/54926445-e2ec-4a51-a442-dd561aaf6255.zip GoogleAccessId=service-500012498491%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1689192845&Signature=PymR6UAXJU0SGikVONtxaifB9X1D%2FeyHIBBTKjZXl8fwrJ1mqEMXRuqV9faBYUuHlombvGVTBYALCknXdEiPMPcJVFI%2FZ9z3yUWG8gzxx8VkVJPSftExvd4aX%2Bna1%2F59vIziAb8CXhbH77OCKGGtqV6GmtuWD3qU%2FZ35bhwpZm22n9vOkB6Kv3BRo%2BcdUXSxjA9Ucv0LQhKAEFsSP9BHvFPgmfDerdn4x2jyV5ZM0ZhDLzdHLX3S%2BVfaZamNPYClyjrn4K6QadHduEMLP4QD0TFCBh%2B88awtS5wGx7UAaPFO%2FqKKjgidV5IYM5IwshbieAEoe%2FjFRctZ41vQxbBU8A%3D%3D
+[debug] [2023-07-12T19:44:05.096Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-500012498491-us-central1/54926445-e2ec-4a51-a442-dd561aaf6255.zip [stream]
